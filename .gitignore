@@ -24,4 +24,6 @@ hs_err_pid*
 
 .idea
 pom.xml
+init.sh
+proceed.sh
 

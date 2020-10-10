@@ -18,7 +18,8 @@ public class Main {
         Job job = Job.getInstance();
         job.setJarByClass(Main.class);
         job.setJobName("Reduce side join");
-        MultipleInputs.addInputPath(job, new Path(args[0]), );
+//        MultipleInputs.addInputPath(job, new Path(args[0]),);
+//        MultipleInputs.addInputPath(job, new Path(args[1]),);
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
         job.setOutputKeyClass(Text.class);

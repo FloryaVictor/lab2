@@ -1,2 +1,4 @@
-package lab2.writables;public class DictionaryWritable {
+package lab2.writables;
+
+public class DictionaryWritable {
 }

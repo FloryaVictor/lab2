@@ -20,7 +20,7 @@ public class Main {
         job.setJobName("Reduce side join");
 //        MultipleInputs.addInputPath(job, new Path(args[0]),);
 //        MultipleInputs.addInputPath(job, new Path(args[1]),);
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
         job.setNumReduceTasks(15);

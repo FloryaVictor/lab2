@@ -11,8 +11,8 @@ import java.lang.*;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        if (args.length != 2) {
-            System.err.println("Usage: lab1.WordCountApp <input path> <output path>");
+        if (args.length != 3) {
+            System.err.println("Usage: lab2.Main <input path 1> <input path 2> <output path>");
             System.exit(-1);
         }
         Job job = Job.getInstance();
@@ -22,7 +22,7 @@ public class Main {
 //        MultipleInputs.addInputPath(job, new Path(args[1]),);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setOutputKeyClass(Text.class);
-        job.setOutputValueClass(IntWritable.class);
+        job.setOutputValueClass(Text.class);
         job.setNumReduceTasks(15);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }

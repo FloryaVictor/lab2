@@ -16,12 +16,10 @@ public class Main {
         }
         Job job = Job.getInstance();
         job.setJarByClass(Main.class);
-        job.setJobName("Word count");
+        job.setJobName("Reduce side join");
         FileInputFormat.addInputPath(job, new Path(args[0]));
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
-        
-//        job.setMapperClass(WordMapper.class);
-//        job.setReducerClass(WordReducer.class);
+
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
         job.setNumReduceTasks(15);

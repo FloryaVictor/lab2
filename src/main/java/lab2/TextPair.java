@@ -60,6 +60,11 @@ public class TextPair implements WritableComparable<TextPair> {
         }
     }
 
-    public static class FirstComparator implements RawComparator<>
+    public static class FirstComparator implements RawComparator<TextPair>{
+        @Override
+        public int compare(TextPair o1, TextPair o2) {
+            return 0;
+        }
+    }
 
 }

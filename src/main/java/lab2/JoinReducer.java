@@ -23,7 +23,11 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
                 sum += delay;
                 count ++;
             }
+            context.write(code, new Text(
+                    Integer.toString(sum / count) +
+                    " " + Integer.toString(min) +
+                    " " + Integer.toString(max))
+            );
         }
-        context.write(code, new Text());
     }
 }

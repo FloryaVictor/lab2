@@ -61,12 +61,9 @@ public class TextPair implements WritableComparable<TextPair> {
     }
 
     public static class FirstComparator implements RawComparator{
-        @Override
         public int compare(TextPair o1, TextPair o2) {
-            return 0;
+            return o1.first.compareTo(o2.first);
         }
-
-
     }
 
 }

@@ -2,6 +2,7 @@ package lab2;
 
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
+import org.apache.hadoop.mapreduce.Partitioner;
 
 import java.io.DataInput;
 import java.io.DataOutput;
@@ -50,6 +51,8 @@ public class TextPair implements WritableComparable<TextPair> {
         return this.toString().hashCode();
     }
 
-    public static class FirstPartioner extends Partioner
+    public static class FirstPartioner extends Partioner<>{
+
+    }
 
 }

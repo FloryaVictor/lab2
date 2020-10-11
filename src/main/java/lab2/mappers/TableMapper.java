@@ -11,7 +11,7 @@ public class TableMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] info  = key.toString().split(",");
-        if (())
-        context.write(new TextPair(info[14], "0"), new Text(info[18]));
+        if (Integer.parseInt(info[18]) > 0)
+            context.write(new TextPair(info[14], "0"), new Text(info[18]));
     }
 }

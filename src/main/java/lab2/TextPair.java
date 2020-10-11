@@ -12,12 +12,13 @@ public class TextPair implements WritableComparable<TextPair> {
     TextPair()
     {
         first = new Text();
-        second = new TextPair();
+        second = new Text();
     }
 
     @Override
     public int compareTo(TextPair o) {
-        return 0;
+        TextPair other = (TextPair)o;
+        return other.first == this.first && ;
     }
 
     @Override

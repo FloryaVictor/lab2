@@ -21,7 +21,7 @@ public class Main {
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);
-        job.setNumReduceTasks(15);
+        job.setNumReduceTasks(5);
         System.exit(job.waitForCompletion(true) ? 0 : 1);
     }
 }

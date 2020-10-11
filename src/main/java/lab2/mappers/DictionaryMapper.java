@@ -10,7 +10,7 @@ import java.io.IOException;
 public class DictionaryMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        String airport  = key.toString();
-        context.write(new TextPair());
+        String[] info  = key.toString().split(",");
+        context.write(new TextPair(info[0], ));
     }
 }

@@ -26,16 +26,19 @@ public class TextPair implements WritableComparable<TextPair> {
 
     @Override
     public void write(DataOutput out) throws IOException {
+        first.write(out);
+        second.write(out);
     }
 
     @Override
     public void readFields(DataInput in) throws IOException {
-
+        first.readFields(in);
+        second.readFields(in);
     }
 
     @Override
     public String toString() {
-        return first.toString() + " " + second.toString();
+        return first.toString() + "\t" + second.toString();
     }
 
     @Override

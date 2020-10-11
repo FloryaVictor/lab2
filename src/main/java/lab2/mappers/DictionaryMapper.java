@@ -2,7 +2,14 @@ package lab2.mappers;
 
 import lab2.TextPair;
 import org.apache.hadoop.io.LongWritable;
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.mapreduce.Mapper;
 
-public class DictionaryMapper extends Mapper<LongWritable, Text, TextPair, Text>{
+import java.io.IOException;
 
+public class DictionaryMapper extends Mapper<LongWritable, Text, TextPair, Text> {
+    @Override
+    protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
+        super.map(key, value, context);
+    }
 }

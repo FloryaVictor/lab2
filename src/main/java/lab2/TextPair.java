@@ -36,6 +36,11 @@ public class TextPair implements WritableComparable<TextPair> {
 
     @Override
     public String toString() {
-        return super.toString();
+        return first.toString() + " " + second.toString();
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
 }

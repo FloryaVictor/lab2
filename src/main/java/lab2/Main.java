@@ -1,6 +1,5 @@
 package lab2;
 
-import lab2.mappers.TableMapper;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -17,8 +16,8 @@ public class Main {
         Job job = Job.getInstance();
         job.setJarByClass(Main.class);
         job.setJobName("Reduce side join");
-        MultipleInputs.addInputPath(job, new Path(args[0]), TableMapper.class);
-        MultipleInputs.addInputPath(job, new Path(args[1]),);
+//        MultipleInputs.addInputPath(job, new Path(args[0]),);
+//        MultipleInputs.addInputPath(job, new Path(args[1]),);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);

@@ -18,7 +18,7 @@ public class TextPair implements WritableComparable<TextPair> {
     @Override
     public int compareTo(TextPair o) {
         TextPair other = (TextPair)o;
-        if (other.first.)
+        if (other.first.compareTo(o.first) !=0)
     }
 
     @Override

@@ -60,16 +60,13 @@ public class TextPair implements WritableComparable<TextPair> {
         }
     }
 
-    public static class FirstComparator implements RawComparator<TextPair>{
+    public static class FirstComparator implements Text.Comparator<TextPair> {
         @Override
         public int compare(TextPair o1, TextPair o2) {
             return 0;
         }
 
-        @Override
-        public int compare(byte[] b1, int s1, int l1, byte[] b2, int s2, int l2) {
-            return 0;
-        }
+
     }
 
 }

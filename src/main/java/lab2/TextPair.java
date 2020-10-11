@@ -18,7 +18,7 @@ public class TextPair implements WritableComparable<TextPair> {
     @Override
     public int compareTo(TextPair o) {
         TextPair other = (TextPair)o;
-        return other.first == this.first && ;
+        return other.first;
     }
 
     @Override

@@ -1,5 +1,8 @@
 package lab2.mappers;
 
-public class DictionaryMapper {
+import lab2.TextPair;
+import org.apache.hadoop.io.LongWritable;
+
+public class DictionaryMapper extends Mapper<LongWritable, Text, TextPair, Text>{
 
 }

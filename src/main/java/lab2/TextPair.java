@@ -51,7 +51,7 @@ public class TextPair implements WritableComparable<TextPair> {
         return this.toString().hashCode();
     }
 
-    public static class FirstPartioner extends Partioner<>{
+    public static class FirstPartioner extends Partioner<TextPair, Text>{
 
     }
 

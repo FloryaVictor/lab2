@@ -4,6 +4,7 @@ import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.mapreduce.Partitioner;
 
+
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
@@ -54,8 +55,10 @@ public class TextPair implements WritableComparable<TextPair> {
     public static class FirstPartitioner extends Partitioner<TextPair, Text>{
         @Override
         public int getPartition(TextPair textPair, Text text, int numPartitions) {
+            GroupComparator
             return (textPair.second.hashCode() & Integer.MAX_VALUE) % numPartitions;
         }
     }
+
 
 }

@@ -14,7 +14,10 @@ public class TextPair implements WritableComparable<TextPair> {
         first = new Text();
         second = new Text();
     }
+    TextPair()
+    {
 
+    }
     @Override
     public int compareTo(TextPair o) {
         TextPair other = (TextPair)o;

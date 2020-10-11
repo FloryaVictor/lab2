@@ -33,4 +33,9 @@ public class TextPair implements WritableComparable<TextPair> {
     public void readFields(DataInput in) throws IOException {
 
     }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

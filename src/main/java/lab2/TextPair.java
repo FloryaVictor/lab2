@@ -49,4 +49,7 @@ public class TextPair implements WritableComparable<TextPair> {
     public int hashCode() {
         return this.toString().hashCode();
     }
+
+    public static class FirstPartioner 
+
 }

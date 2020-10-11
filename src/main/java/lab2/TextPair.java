@@ -14,9 +14,10 @@ public class TextPair implements WritableComparable<TextPair> {
         first = new Text();
         second = new Text();
     }
-    TextPair()
+    TextPair(String first, String second)
     {
-
+        this.first = new Text(first);
+        this.second = new Text(second);
     }
     @Override
     public int compareTo(TextPair o) {

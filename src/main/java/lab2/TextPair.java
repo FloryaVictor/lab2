@@ -1,2 +1,32 @@
-package lab2;public class TextPair {
+package lab2;
+
+import org.apache.hadoop.io.Text;
+import org.apache.hadoop.io.WritableComparable;
+
+import java.io.DataInput;
+import java.io.DataOutput;
+import java.io.IOException;
+
+public class TextPair implements WritableComparable<TextPair> {
+    public Text first, second;
+    TextPair()
+    {
+        first = new Text();
+        second = new TextPair();
+    }
+
+    @Override
+    public int compareTo(TextPair o) {
+        return 0;
+    }
+
+    @Override
+    public void write(DataOutput out) throws IOException {
+
+    }
+
+    @Override
+    public void readFields(DataInput in) throws IOException {
+
+    }
 }

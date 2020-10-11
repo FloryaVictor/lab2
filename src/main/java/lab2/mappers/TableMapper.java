@@ -10,6 +10,7 @@ import java.io.IOException;
 public class TableMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        super.map(key, value, context);
+        String[] info  = key.toString().split(",");
+        context.write(new TextPair(info[0], "0"), new Text(info[1]));
     }
 }

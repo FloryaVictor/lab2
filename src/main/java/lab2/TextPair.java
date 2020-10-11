@@ -26,7 +26,6 @@ public class TextPair implements WritableComparable<TextPair> {
 
     @Override
     public void write(DataOutput out) throws IOException {
-
     }
 
     @Override
@@ -41,6 +40,6 @@ public class TextPair implements WritableComparable<TextPair> {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return this.toString().hashCode();
     }
 }

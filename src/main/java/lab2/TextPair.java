@@ -50,6 +50,6 @@ public class TextPair implements WritableComparable<TextPair> {
         return this.toString().hashCode();
     }
 
-    public static class FirstPartioner 
+    public static class FirstPartioner extends Partio
 
 }

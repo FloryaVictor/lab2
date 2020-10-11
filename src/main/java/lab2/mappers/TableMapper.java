@@ -1,2 +1,4 @@
-package lab2.mappers;public class TableMapper {
+package lab2.mappers;
+
+public class TableMapper {
 }

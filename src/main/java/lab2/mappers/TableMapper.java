@@ -13,7 +13,6 @@ public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
     private static final int  IS_CANCELLED = 19;
 
     private static final String ONE = "1.00";
-    private static final String ZERO = "0.00";
 
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {

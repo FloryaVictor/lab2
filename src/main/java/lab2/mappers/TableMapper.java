@@ -8,7 +8,9 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
-    public static final int 
+    public static final int id = 0;
+    public static final int delay = 0;
+    public static final int id = 0;
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() == 0){

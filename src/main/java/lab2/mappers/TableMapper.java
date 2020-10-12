@@ -21,10 +21,10 @@ public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
         }
         String[] raw = value.toString().replaceAll("\"","").split(",");
         if (!raw[IS_CANCELLED].equals(ONE) && !raw[DELAY].equals("")) {
-            int id = Integer.parseInt(raw[ID]);
             int delay = Integer.parseInt(raw[DELAY]);
             if (delay > 0) {
-                context.write(new KeyPair(id, 1), new Text(Integer.tdelay));
+                int id = Integer.parseInt(raw[ID]);
+                context.write(new KeyPair(id, 1), new Text(raw[delay]));
             }
         }
     }

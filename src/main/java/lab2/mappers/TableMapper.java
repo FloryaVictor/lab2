@@ -23,7 +23,7 @@ public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
         String[] raw = value.toString().replaceAll("\"","").split(",");
         if (!raw[IS_CANCELLED].equals(ONE) && !raw[DELAY].equals("")) {
             int id = Integer.parseInt(raw[ID]);
-            context.write(new KeyPair(id, ));
+            context.write(new KeyPair(id, 1), );
         }
     }
 }

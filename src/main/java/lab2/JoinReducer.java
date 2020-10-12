@@ -10,7 +10,7 @@ public class JoinReducer extends Reducer<KeyPair, Text, Text, Text> {
     @Override
     protected void reduce(KeyPair key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
-        String airport = iter.next()+"";
+        String airport = iter.next().toString();
         if (iter.hasNext()) {
             float min = Float.MAX_VALUE;
             float max = Float.MIN_VALUE;

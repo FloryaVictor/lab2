@@ -25,7 +25,7 @@ public class Main {
         job.setPartitionerClass(FirstPartitioner.class);
         job.setGroupingComparatorClass(FirstComparator.class);
         job.setReducerClass(JoinReducer.class);
-        job.setMapOutputKeyClass(TextPair.class);
+        job.setMapOutputKeyClass(KeyPair.class);
 
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(Text.class);

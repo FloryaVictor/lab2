@@ -2,9 +2,9 @@ package lab2;
 
 import org.apache.hadoop.io.RawComparator;
 
-public class FirstComparator implements RawComparator<TextPair> {
-    public int compare(TextPair o1, TextPair o2) {
-        return o1.first.compareTo(o2.first);
+public class FirstComparator implements RawComparator<KeyPair> {
+    public int compare(KeyPair o1, KeyPair o2) {
+        return o1.id.compareTo(o2.id);
     }
 
     @Override

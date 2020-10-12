@@ -1,51 +1,49 @@
 package lab2;
 
-import org.apache.hadoop.io.RawComparator;
+import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
-import org.apache.hadoop.mapreduce.Partitioner;
 
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
 
-public class TextPair implements WritableComparable<TextPair> {
-    public Text first, second;
-    TextPair()
+public class KeyPair implements WritableComparable<KeyPair> {
+    public IntWritable id, type;
+    KeyPair()
     {
-        first = new Text();
-        second = new Text();
+        id = new IntWritable();
+        type = new IntWritable();
     }
-    public TextPair(String first, String second)
+    public KeyPair(Integer id, Integer type)
     {
-        this.first = new Text(first);
-        this.second = new Text(second);
+        this.id = new IntWritable(id);
+        this.type = new IntWritable(type);
     }
     @Override
-    public int compareTo(TextPair o) {
-        TextPair other = o;
-        int cmp = other.first.compareTo(o.first);
+    public int compareTo(KeyPair o) {
+        int cmp = id.compareTo(o.id);
         if (cmp != 0)
             return cmp;
-        return other.second.compareTo(o.second);
+        return type.compareTo(o.type);
     }
 
     @Override
     public void write(DataOutput out) throws IOException {
-        first.write(out);
-        second.write(out);
+        id.write(out);
+        type.write(out);
     }
 
     @Override
     public void readFields(DataInput in) throws IOException {
-        first.readFields(in);
-        second.readFields(in);
+        id.readFields(in);
+        type.readFields(in);
     }
 
     @Override
     public String toString() {
-        return first.toString() + "\t" + second.toString();
+        return id.toString() + "\t" + type.toString();
     }
 
     @Override

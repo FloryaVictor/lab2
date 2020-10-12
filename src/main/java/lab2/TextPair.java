@@ -63,7 +63,7 @@ public class TextPair implements WritableComparable<TextPair> {
         }
     }
 
-    public static class FirstComparator implements WritableComparator{
+    public static class FirstComparator extends WritableComparator{
         protected FirstComparator(){
             super(TextPair.class, true );
         }

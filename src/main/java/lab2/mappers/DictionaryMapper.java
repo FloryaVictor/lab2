@@ -13,7 +13,7 @@ public class DictionaryMapper extends Mapper<LongWritable, Text, KeyPair, Text> 
         if (key.get() == 0){
             return;
         }
-        String[] info  = value.toString().replaceAll("\"","").split(",");
-        context.write(new KeyPair(Integer.parseInt(info[0]), 0), new Text(info[1]));
+        String[] raw  = value.toString().replaceAll("\"","").split(",");
+        context.write(new KeyPair(Integer.parseInt(raw[0]), 0), new Text(raw[1]));
     }
 }

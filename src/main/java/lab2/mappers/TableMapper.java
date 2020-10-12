@@ -16,7 +16,7 @@ public class TableMapper extends Mapper<LongWritable, Text, TextPair, Text> {
                 context.write(new TextPair(info[14], "1"), new Text(info[18]));
         }catch (Exception e)
         {
-            System.out.println(info[0]);
+            System.out.println(info.toString());
         }
     }
 }

@@ -14,6 +14,6 @@ public class DictionaryMapper extends Mapper<LongWritable, Text, KeyPair, Text> 
             return;
         }
         String[] info  = value.toString().replaceAll("\"","").split(",");
-        context.write(new KeyPair(info[0], "0"), new Text(info[1]));
+        context.write(new KeyPair(Integer.parseInt(info[0]), 0), new Text(info[1]));
     }
 }

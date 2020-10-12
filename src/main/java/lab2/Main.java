@@ -1,5 +1,6 @@
 package lab2;
 
+import lab2.mappers.DictionaryMapper;
 import lab2.mappers.TableMapper;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -19,7 +20,7 @@ public class Main {
         job.setJarByClass(Main.class);
         job.setJobName("Reduce side join");
         MultipleInputs.addInputPath(job, new Path(args[0]), TextInputFormat.class, TableMapper.class);
-        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, TableMapper.class);
+        MultipleInputs.addInputPath(job, new Path(args[1]), TextInputFormat.class, DictionaryMapper.class);
         FileOutputFormat.setOutputPath(job, new Path(args[2]));
         job.setPartitionerClass(TextPair.FirstPartitioner.class);
         job.setGroupingComparatorClass(TextPair.FirstComparator.class);

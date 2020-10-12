@@ -58,7 +58,7 @@ public class TextPair implements WritableComparable<TextPair> {
     public static class FirstPartitioner extends Partitioner<TextPair, Text>{
         @Override
         public int getPartition(TextPair textPair, Text text, int numPartitions) {
-            return (textPair.first.hashCode() & Integer.MAX_VALUE) % numPartitions;
+            return Integer.parseInt(textPair.first.toString()) % numPartitions;
         }
     }
 

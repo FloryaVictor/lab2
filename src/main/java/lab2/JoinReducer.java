@@ -16,19 +16,20 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
             float max = Float.MIN_VALUE;
             float sum = 0.0f;
             int count = 0;
-            while (iter.hasNext())
-            {
-                float delay = Float.parseFloat(iter.next().toString());
-                min = Float.min(delay, min);
-                max = Float.max(delay, max);
-                sum += delay;
-                count ++;
+            while (iter.hasNext()) {
+                try {
+                    float delay = Float.parseFloat(iter.next().toString());
+                    min = Float.min(delay, min);
+                    max = Float.max(delay, max);
+                    sum += delay;
+                    count++;
+                    context.write(code, new Text(
+                            Float.toString(sum / count) +
+                                    " " + Float.toString(min) +
+                                    " " + Float.toString(max))
+                    );
+                }catch (Exception e){}
             }
-            context.write(code, new Text(
-                    Float.toString(sum / count) +
-                    " " + Float.toString(min) +
-                    " " + Float.toString(max))
-            );
         }
     }
 }

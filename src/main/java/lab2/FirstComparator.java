@@ -1,6 +1,5 @@
 package lab2;
 
-import org.apache.hadoop.io.RawComparator;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 

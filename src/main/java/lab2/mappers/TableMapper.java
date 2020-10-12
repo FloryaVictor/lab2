@@ -10,7 +10,7 @@ import java.io.IOException;
 public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
     public static final int ID = 14;
     public static final int DELAY = 18;
-    public static final int  IS_CANCELLED = 0;
+    public static final int  IS_CANCELLED = 19;
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() == 0){

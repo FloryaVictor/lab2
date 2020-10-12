@@ -64,14 +64,12 @@ public class TextPair implements WritableComparable<TextPair> {
     }
 
     public static class FirstComparator implements WritableComparator{
+        
+
         public int compare(WritableComparable o1, WritableComparable o2) {
             return Integer.parseInt(((TextPair)o1).first.toString()) - Integer.parseInt(((TextPair)o1).first.toString());
         }
 
-        @Override
-        public int compare(byte[] b1, int s1, int l1, byte[] b2, int s2, int l2) {
-            return 0;
-        }
     }
 
 }

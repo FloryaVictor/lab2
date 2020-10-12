@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class DictionaryMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
     private static final int ID = 0;
-    private static final int NAME = 0;
+    private static final int NAME = 1;
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() == 0){

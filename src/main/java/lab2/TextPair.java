@@ -26,7 +26,7 @@ public class TextPair implements WritableComparable<TextPair> {
     public int compareTo(TextPair o) {
         TextPair other = o;
         int cmp = other.first.compareTo(o.first);
-        if (cmp!= 0)
+        if (cmp != 0)
             return cmp;
         return other.second.compareTo(o.second);
     }

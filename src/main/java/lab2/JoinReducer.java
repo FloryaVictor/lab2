@@ -9,7 +9,7 @@ import java.util.Iterator;
 public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
     @Override
     protected void reduce(TextPair key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
-        System.out.println(key.first);
+        System.out.println(key.second);
         Iterator<Text> iter = values.iterator();
         Text airport = iter.next();
         if (iter.hasNext()){

@@ -14,7 +14,6 @@ public class TableMapper extends Mapper<LongWritable, Text, TextPair, Text> {
         try {
             if (Float.parseFloat(info[18]) > 0)
                 context.write(new TextPair(info[14], "1"), new Text(info[18]));
-            System.out.println(info[14]);
         }catch (Exception e)
         {
 

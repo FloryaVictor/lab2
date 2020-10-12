@@ -8,7 +8,7 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
-    public static final int id = 0;
+    public static final int id = 14;
     public static final int delay = 0;
     public static final int id = 0;
     @Override

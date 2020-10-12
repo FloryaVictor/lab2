@@ -17,7 +17,7 @@ public class TableMapper extends Mapper<LongWritable, Text, TextPair, Text> {
             System.out.println(Float.parseFloat(info[18]));
         }catch (Exception e)
         {
-            System.out.println(info[18]);
+
         }
     }
 }

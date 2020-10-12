@@ -24,13 +24,11 @@ public class TextPair implements WritableComparable<TextPair> {
     }
     @Override
     public int compareTo(TextPair o) {
-//        TextPair other = o;
-//        int cmp = other.first.compareTo(o.first);
-//        if (cmp!= 0)
-//            return cmp;
-//        return other.second.compareTo(o.second);
-        return new Text(first.toString() + second.toString()).compareTo(
-                new Text((o.first.toString() + o.second.toString())));
+        TextPair other = o;
+        int cmp = other.first.compareTo(o.first);
+        if (cmp!= 0)
+            return cmp;
+        return other.second.compareTo(o.second);
     }
 
     @Override

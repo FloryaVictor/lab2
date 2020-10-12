@@ -4,7 +4,7 @@ import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
 public class FirstComparator extends WritableComparator{
-    protected FirstComparator(){
+    FirstComparator(){
         super(KeyPair.class, true);
     }
 

@@ -11,28 +11,22 @@ public class JoinReducer extends Reducer<KeyPair, Text, Text, Text> {
     protected void reduce(KeyPair key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
         String airport = iter.next()+"";
-        if (iter.hasNext()){
+        if (iter.hasNext()) {
             float min = Float.MAX_VALUE;
             float max = Float.MIN_VALUE;
             float sum = 0.0f;
             int count = 0;
             while (iter.hasNext()) {
-                try {
-                    float delay = Float.parseFloat(iter.next().toString());
-                    min = Float.min(delay, min);
-                    max = Float.max(delay, max);
-                    sum += delay;
-                    count++;
-                }catch (Exception e){
-                    if (e.getClass() == IOException.class || e.getClass() == InterruptedException.class){
-                        throw e;
-                    }
-                }
+                float delay = Float.parseFloat(iter.next().toString());
+                min = Float.min(delay, min);
+                max = Float.max(delay, max);
+                sum += delay;
+                count++;
             }
             context.write(new Text(airport), new Text(
-                    Float.toString(sum / count) +
-                            " " + Float.toString(min) +
-                            " " + Float.toString(max))
+                    (sum / count) +
+                            "\t" + min +
+                            "\t" + max)
             );
         }
     }

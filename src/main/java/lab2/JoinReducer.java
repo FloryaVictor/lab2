@@ -12,21 +12,22 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
         Iterator<Text> iter = values.iterator();
         Text code = iter.next();
         if (iter.hasNext()){
-            int min = Integer.MAX_VALUE;
-            int max = Integer.MIN_VALUE;
-            int count = 0, sum = 0;
+            float min = Float.MAX_VALUE;
+            float max = Float.MIN_VALUE;
+            float sum = 0.0f;
+            int count = 0;
             while (iter.hasNext())
             {
-                int delay = Integer.parseInt(iter.next().toString());
-                min = Integer.min(delay, min);
-                max = Integer.max(delay, max);
+                float delay = Float.parseFloat(iter.next().toString());
+                min = Float.min(delay, min);
+                max = Float.max(delay, max);
                 sum += delay;
                 count ++;
             }
             context.write(code, new Text(
-                    Integer.toString(sum / count) +
-                    " " + Integer.toString(min) +
-                    " " + Integer.toString(max))
+                    Float.toString(sum / count) +
+                    " " + Float.toString(min) +
+                    " " + Float.toString(max))
             );
         }
     }

@@ -10,7 +10,7 @@ import java.io.IOException;
 public class DictionaryMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
-        if (value.toString().startsWith("Code,Description")){
+        if (key.get() == 0){
             return;
         }
         String[] info  = value.toString().replaceAll("\"","").split(",");

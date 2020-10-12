@@ -23,17 +23,17 @@ public class JoinReducer extends Reducer<KeyPair, Text, Text, Text> {
                     max = Float.max(delay, max);
                     sum += delay;
                     count++;
-                    context.write(new Text(airport), new Text(
-                            Float.toString(sum / count) +
-                                    " " + Float.toString(min) +
-                                    " " + Float.toString(max))
-                    );
                 }catch (Exception e){
                     if (e.getClass() == IOException.class || e.getClass() == InterruptedException.class){
                         throw e;
                     }
                 }
             }
+            context.write(new Text(airport), new Text(
+                    Float.toString(sum / count) +
+                            " " + Float.toString(min) +
+                            " " + Float.toString(max))
+            );
         }
     }
 }

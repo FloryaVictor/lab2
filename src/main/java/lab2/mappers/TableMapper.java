@@ -12,7 +12,7 @@ public class TableMapper extends Mapper<LongWritable, Text, TextPair, Text> {
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] info  = value.toString().split(",");
         try {
-            if (Integer.parseInt(info[18]) > 0)
+            if (Float.parseFloat(info[18]) > 0)
                 context.write(new TextPair(info[14], "1"), new Text(info[18]));
         }catch (Exception e)
         {

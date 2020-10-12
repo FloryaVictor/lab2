@@ -28,3 +28,4 @@ init.sh
 proceed.sh
 L_AIRPORT_ID.csv
 664600583_T_ONTIME_sample.csv
+target/*

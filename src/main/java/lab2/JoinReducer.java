@@ -25,8 +25,8 @@ public class JoinReducer extends Reducer<KeyPair, Text, Text, Text> {
             }
             context.write(new Text(airport), new Text(
                     (sum / count) +
-                            "\t" + min +
-                            "\t" + max)
+                            " " + min +
+                            " " + max)
             );
         }
     }

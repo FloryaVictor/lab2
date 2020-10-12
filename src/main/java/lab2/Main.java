@@ -1,5 +1,7 @@
 package lab2;
 
+import lab2.Comparators.FirstComparator;
+import lab2.Comparators.FirstPartitioner;
 import lab2.mappers.DictionaryMapper;
 import lab2.mappers.TableMapper;
 import org.apache.hadoop.fs.Path;

@@ -1,5 +1,6 @@
-package lab2;
+package lab2.Comparators;
 
+import lab2.KeyPair;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 

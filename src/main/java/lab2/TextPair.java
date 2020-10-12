@@ -71,4 +71,15 @@ public class TextPair implements WritableComparable<TextPair> {
         }
     }
 
+    public static class SecondComparator implements RawComparator<TextPair>{
+        public int compare(TextPair o1, TextPair o2) {
+            return o1.second.compareTo(o2.second);
+        }
+
+        @Override
+        public int compare(byte[] b1, int s1, int l1, byte[] b2, int s2, int l2) {
+            return 0;
+        }
+    }
+
 }

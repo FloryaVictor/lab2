@@ -10,7 +10,7 @@ public class JoinReducer extends Reducer<KeyPair, Text, Text, Text> {
     @Override
     protected void reduce(KeyPair key, Iterable<Text> values, Context context) throws IOException, InterruptedException {
         Iterator<Text> iter = values.iterator();
-        String airport = iter.next().toString();
+        Text airport = iter.next();
         if (iter.hasNext()) {
             float min = Float.MAX_VALUE;
             float max = Float.MIN_VALUE;
@@ -23,7 +23,7 @@ public class JoinReducer extends Reducer<KeyPair, Text, Text, Text> {
                 sum += delay;
                 count++;
             }
-            context.write(new Text(airport), new Text(
+            context.write(airport, new Text(
                     (sum / count) +
                             " " + min +
                             " " + max)

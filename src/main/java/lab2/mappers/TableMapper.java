@@ -22,6 +22,7 @@ public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
         }
         String[] raw = value.toString().replaceAll("\"","").split(",");
         if (!raw[IS_CANCELLED].equals(ONE) && !raw[DELAY].equals("")) {
+            String id = raw[ID];
             
         }
     }

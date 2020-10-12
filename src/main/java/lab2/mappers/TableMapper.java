@@ -17,14 +17,9 @@ public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
             return;
         }
         String[] raw = value.toString().replaceAll("\"","").split(",");
-        try {
+        if (raw[])
             if (Float.parseFloat(info[18]) > 0) {
                 context.write(new KeyPair(Integer.parseInt(info[14]), 1), new Text(info[18]));
             }
-        }catch (Exception e) {
-            if (e.getClass() == IOException.class || e.getClass() == InterruptedException.class){
-                throw e;
-            }
-        }
     }
 }

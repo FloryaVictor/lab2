@@ -21,9 +21,8 @@ public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
             return;
         }
         String[] raw = value.toString().replaceAll("\"","").split(",");
-        if (!raw[IS_CANCELLED].equals(ONE))
-            if (Float.parseFloat(info[18]) > 0) {
-                context.write(new KeyPair(Integer.parseInt(info[14]), 1), new Text(info[18]));
-            }
+        if (!raw[IS_CANCELLED].equals(ONE)) {
+            
+        }
     }
 }

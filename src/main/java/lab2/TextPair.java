@@ -65,7 +65,7 @@ public class TextPair implements WritableComparable<TextPair> {
 
     public static class FirstComparator implements WritableComparator{
         protected FirstComparator(){
-            super(TextPair.class, true);
+            super(TextPair.class, true );
         }
 
         public int compare(WritableComparable o1, WritableComparable o2) {

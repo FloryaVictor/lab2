@@ -32,6 +32,10 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
                     if (e.getClass() == IOException.class || e.getClass() == InterruptedException.class){
                         throw e;
                     }
+                    Iterator<Text> i = values.iterator();
+                    while (i.hasNext()) {
+                        System.out.println(i.next().toString());
+                    }
                 }
             }
         }

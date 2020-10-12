@@ -72,5 +72,5 @@ public class TextPair implements WritableComparable<TextPair> {
             return 0;
         }
     }
-    
+
 }

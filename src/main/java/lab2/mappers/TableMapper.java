@@ -21,7 +21,7 @@ public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
             return;
         }
         String[] raw = value.toString().replaceAll("\"","").split(",");
-        if (!raw[IS_CANCELLED].equals(ONE)) {
+        if (!raw[IS_CANCELLED].equals(ONE) && !raw[DELAY].equals("")) {
             
         }
     }

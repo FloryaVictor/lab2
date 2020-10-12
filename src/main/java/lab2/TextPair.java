@@ -3,15 +3,12 @@ package lab2;
 import org.apache.hadoop.io.RawComparator;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.WritableComparable;
-import org.apache.hadoop.io.WritableComparator;
 import org.apache.hadoop.mapreduce.Partitioner;
 
 
 import java.io.DataInput;
 import java.io.DataOutput;
 import java.io.IOException;
-
-import static org.apache.hadoop.io.WritableComparator.compareBytes;
 
 public class TextPair implements WritableComparable<TextPair> {
     public Text first, second;
@@ -59,19 +56,19 @@ public class TextPair implements WritableComparable<TextPair> {
     public static class FirstPartitioner extends Partitioner<TextPair, Text>{
         @Override
         public int getPartition(TextPair textPair, Text text, int numPartitions) {
-            return Integer.parseInt(textPair.first.toString()) % numPartitions;
+            return (textPair.first.hashCode() & Integer.MAX_VALUE) % numPartitions;
         }
     }
 
-    public static class FirstComparator extends WritableComparator{
-        protected FirstComparator(){
-            super(TextPair.class, true );
+    public static class FirstComparator implements RawComparator<TextPair>{
+        public int compare(TextPair o1, TextPair o2) {
+            return o1.first.compareTo(o2.first);
         }
 
-        public int compare(WritableComparable o1, WritableComparable o2) {
-            return Integer.parseInt(((TextPair)o1).first.toString()) - Integer.parseInt(((TextPair)o1).first.toString());
+        @Override
+        public int compare(byte[] b1, int s1, int l1, byte[] b2, int s2, int l2) {
+            return 0;
         }
-
     }
 
 }

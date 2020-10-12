@@ -12,5 +12,6 @@ public class DictionaryMapper extends Mapper<LongWritable, Text, TextPair, Text>
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         String[] info  = value.toString().split(",");
         context.write(new TextPair(info[0].replace("\"",""), "0"), new Text(info[1]));
+        System.out.println(info[1]);
     }
 }

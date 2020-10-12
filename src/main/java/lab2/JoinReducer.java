@@ -23,7 +23,7 @@ public class JoinReducer extends Reducer<TextPair, Text, Text, Text> {
                     max = Float.max(delay, max);
                     sum += delay;
                     count++;
-                    context.write(key.first, new Text(
+                    context.write(code, new Text(
                             Float.toString(sum / count) +
                                     " " + Float.toString(min) +
                                     " " + Float.toString(max))

@@ -23,7 +23,7 @@ public class JoinReducer extends Reducer<KeyPair, Text, Text, Text> {
                 sum += delay;
                 count++;
             }
-            context.write(airport, new Text(
+            context.write(new Text(airport), new Text(
                     (sum / count) +
                             " " + min +
                             " " + max)

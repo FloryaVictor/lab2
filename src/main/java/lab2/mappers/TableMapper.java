@@ -8,10 +8,12 @@ import org.apache.hadoop.mapreduce.Mapper;
 import java.io.IOException;
 
 public class TableMapper extends Mapper<LongWritable, Text, KeyPair, Text> {
-    public static final int ID = 14;
-    public static final int DELAY = 18;
-    public static final int  IS_CANCELLED = 19;
-    
+    private static final int ID = 14;
+    private static final int DELAY = 18;
+    private static final int  IS_CANCELLED = 19;
+
+    private static final String 
+
     @Override
     protected void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
         if (key.get() == 0){
